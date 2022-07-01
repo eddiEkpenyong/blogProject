@@ -1,23 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-    <nav class="navbar navbar-expand-sm navbar-dark">
-        <a class="nav-link" style="color: white" href="#">Blogaweb</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="nav-link pr-5" style="color: white" href="#">Blogaweb</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="font-weight: 500">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">HOME</a>
                 </li>
 
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">BLOGS</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">POSTS</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">UPDATES</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">UPDATES</a>
+                </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+            <form class="" method="" action="#">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <button type="submit" class="input-group-text" style="outline: none"><i class="fa fa-search"
+                                aria-hidden="true"></i></button>
+                    </div>
+                    <input type="search" class="form-control" name="search" placeholder="Search">
             </form>
-        </div>
     </nav>
 @endsection
