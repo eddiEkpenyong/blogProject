@@ -1,6 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//index-dashboard page
 Route::get('/', function () {
     return view('index.dashboard');
 });
+
+//Navlinks
+Route::get('home', [PagesController::class,'home']);
+Route::get('blogs', [PagesController::class,'blogs']);
+Route::get('posts', [PagesController::class,'posts']);
+Route::get('gigs', [PagesController::class,'gigs']);
+Route::get('chats', [PagesController::class,'chats']);
