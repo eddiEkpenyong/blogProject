@@ -39,3 +39,19 @@
             </form>
     </nav>
 @endsection
+
+@section('firstDiv')
+<div class="row">
+
+    <div class="col-md-6" style="margin-top: 8rem">
+        <div class="mb-0 h5 d-sm-block">Get Daily Updates From Bloggago</div>
+        <div class="h1 mt-0 p-0" style="font-size: 4rem; color: #3f0a8a">BLOGAGGOO</div>
+    </div>
+
+    <div class="col-md-6">
+        <img src= {{ asset('storage/images/deveops.svg') }} alt=""  class="img-fluid">
+    </div>
+
+</div>
+<h6 class="mt-5" style="border-bottom:5px solid black"><span class="bg-primary px-2 pt-1 mb-0">TRENDING</span></h6>
+@endsection
