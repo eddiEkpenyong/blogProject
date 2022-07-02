@@ -25,7 +25,7 @@
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="/chats">CHATROOM</a>
+                    <a class="nav-link" href="/chats">CHATS</a>
                 </li>
             </ul>
 
