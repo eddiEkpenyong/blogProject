@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 
@@ -26,3 +26,12 @@ Route::get('blogs', [PagesController::class,'blogs']);
 Route::get('posts', [PagesController::class,'posts']);
 Route::get('gigs', [PagesController::class,'gigs']);
 Route::get('chats', [PagesController::class,'chats']);
+
+//Login
+Route::get('login', [PagesController::class,'login']);
+Route::post('login', [AuthController::class,'login'])->name('login');
+
+Route::get('register', [PagesController::class,'register']);
+Route::post('register', [AuthController::class,'register'])->name('register');
+
+

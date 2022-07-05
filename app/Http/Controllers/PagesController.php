@@ -25,4 +25,10 @@ class PagesController extends Controller
     public function chats(){
         return view('pages.chat');
     }
+    public function login(){
+        return view('Auth.login');
+    }
+    public function register(){
+        return view('Auth.register');
+    }
 }
