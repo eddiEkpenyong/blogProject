@@ -16,9 +16,7 @@ use App\Http\Controllers\PagesController;
 */
 
 //index-dashboard page
-Route::get('/', function () {
-    return view('index.dashboard');
-});
+Route::get('/', [PagesController::class, 'index'])->middleware('auth');
 
 //Navlinks
 Route::get('home', [PagesController::class,'home']);
@@ -31,7 +29,11 @@ Route::get('chats', [PagesController::class,'chats']);
 Route::get('login', [PagesController::class,'login']);
 Route::post('login', [AuthController::class,'login'])->name('login');
 
+//Register
 Route::get('register', [PagesController::class,'register']);
 Route::post('register', [AuthController::class,'register'])->name('register');
+
+//Logout
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -45,5 +46,12 @@ class AuthController extends Controller
         auth()->login($user);
 
         return redirect('/')->with('message', 'User Created and Logged-In');
+    }
+
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+
+        return redirect()->route('login');
     }
 }

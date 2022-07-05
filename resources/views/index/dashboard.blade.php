@@ -28,7 +28,16 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/chats">CHATS</a>
                 </li>
+
+                <li class="nav-item active">
+                    <form class="nav-link active" action={{Route('logout')}} method="POST">
+                        @csrf
+                        <input value="LOGOUT" type="submit" class="bg-transparent text-white border-0 font-weight-semibold">
+                    </form>
+                </li>
+
             </ul>
+
 
             <form class="" method="" action="#">
                 <div class="input-group">
