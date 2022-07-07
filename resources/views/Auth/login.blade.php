@@ -1,4 +1,4 @@
-@extends('layouts.apps')
+@extends('layouts.app')
 @section('content')
 
 <div class="container jumbotron pt-3" style="width: 20%; margin-top:25vh">

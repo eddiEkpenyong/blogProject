@@ -20,7 +20,6 @@ Route::get('/', [PagesController::class, 'index'])->middleware('auth');
 
 //Navlinks
 Route::get('home', [PagesController::class,'home']);
-Route::get('blogs', [PagesController::class,'blogs']);
 Route::get('posts', [PagesController::class,'posts']);
 Route::get('gigs', [PagesController::class,'gigs']);
 Route::get('chats', [PagesController::class,'chats']);
