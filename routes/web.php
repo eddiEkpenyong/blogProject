@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\PagesController;
 */
 
 //index-dashboard page
-Route::get('/', [PagesController::class, 'index'])->middleware('auth');
+Route::get('/', [PagesController::class, 'index']);
 
 //Navlinks
 Route::get('home', [PagesController::class,'home']);
@@ -34,5 +35,8 @@ Route::post('register', [AuthController::class,'register'])->name('register');
 
 //Logout
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+//posts
+Route::resource('/posts', PostsController::class);
 
 

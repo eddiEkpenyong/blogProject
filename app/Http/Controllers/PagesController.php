@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Posts;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function index(){
-        return view('index.dashboard');
+        $post = Posts::all();
+        return view('index.dashboard', [ 'post' => $post]);
     }
 
     public function home(){
         return view('pages.home');
-    }
-
-    public function blogs(){
-        return view('pages.blog');
     }
 
     public function posts(){

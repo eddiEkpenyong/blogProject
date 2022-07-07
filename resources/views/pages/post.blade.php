@@ -1,5 +1,10 @@
-@extends('layouts.apps')
+@extends('layouts.app')
+
 @section('content')
-@include('nav')
+@include('includes.nav')
+
+<div class="container">
+    
+</div>
 @endsection
 

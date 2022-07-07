@@ -1,6 +1,6 @@
 {{-- START OF NAVBAR --}}
 
-<div class="container-fluid" style="background-color: #0e132b">
+<div class="container-fluid p-3" style="background-color: #0e132b">
     <nav class="container navbar navbar-expand-lg navbar-dark">
         <a class="nav-link pr-5" style="color: white" href="/">Blogaweb</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="font-weight: 500">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home">HOME</a>
+                    <a class="nav-link" href="/">HOME</a>
                 </li>
 
                 <li class="nav-item active">
@@ -24,13 +24,21 @@
                     <a class="nav-link" href="/chats">CHATS</a>
                 </li>
 
+                @guest
                 <li class="nav-item active">
-                    <form class="nav-link active" action={{Route('logout')}} method="POST">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                @endguest
+
+                @auth
+                <li class="nav-item active">
+                    <form class="nav-link active" action={{ Route('logout') }} method="POST">
                         @csrf
-                        <input value="LOGOUT" type="submit" class="bg-transparent text-white border-0 font-weight-semibold">
+                        <input value="LOGOUT" type="submit"
+                            class="bg-transparent text-white border-0 font-weight-semibold">
                     </form>
                 </li>
-
+                @endauth
             </ul>
 
 
@@ -41,9 +49,9 @@
                                 aria-hidden="true"></i></button>
                     </div>
                     <input type="search" class="form-control" name="search" placeholder="Search">
+                </div>
             </form>
     </nav>
-
 </div>
 
-{{-- END OF NAVBAR SECTION --}}
+    {{-- END OF NAVBAR SECTION --}}

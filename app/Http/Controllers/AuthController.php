@@ -26,7 +26,7 @@ class AuthController extends Controller
             return redirect('/');
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('fail', 'Incorrect Credentials');
     }
 
     public function register(Request $request){

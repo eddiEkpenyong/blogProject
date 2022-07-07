@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>EDVIN->BLOG</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,7 @@
                 .mq-2{
                     font-size: 15px !important;
                 }
-
+            }
                 @media only screen and (max-width: 995px){
                 .mq-1{
                     font-size: 15px !important;

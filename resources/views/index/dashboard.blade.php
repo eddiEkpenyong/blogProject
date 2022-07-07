@@ -12,121 +12,32 @@
 
         </div>
 
+        <a href="/posts/create" class= "btn btn-md text-white mt-3 btn-danger" onclick="prompt('Make Your First Post? Need Guides')">Create Post</a>
 
-        <h6 class="mt-5 pt-1" style="border-bottom:3px solid black"><span
+        <h6 class="mt-4 pt-1" style="border-bottom:3px solid black"><span
                 class="bg-danger px-2 pt-1 text-white">TRENDING</span>
         </h6>
 
         <div class="row g-4 mt-3">
-            <div class="col-md-3 col-12">
-                <div class="card border-0 h-100">
-                    <img src={{ asset('storage/images/btc.svg') }} alt="" class="card-image-top">
-                    <div class="card-body">
-                        <p class="card-text text-center font-weight-bold"> About CryptoCurrency</p>
-                    </div>
-                    <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
-                    </div>
-                </div>
-            </div>
+            @if (count($post)>0)
 
+            @foreach ($post as $posts)
             <div class="col-md-3 col-12">
                 <div class="card border-0 h-100">
                     <img src={{ asset('storage/images/eth.svg') }} alt="" class="card-image-top">
                     <div class="card-body">
-                        <p class="card-text text-center font-weight-bold">Ethereum Network</p>
+                        <p class="card-text text-center font-weight-bold">{{$posts->title}}</p>
                     </div>
                     <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
+                        <span>Tags: <a href="#" class="badge badge-secondary">{{$posts->badge}}</a>
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <div class="col-md-3 col-12">
-                <div class="card border-0 h-100">
-                    <img src={{ asset('storage/images/btc.svg') }} alt="" class="card-image-top">
-                    <div class="card-body">
-                        <p class="card-text text-center font-weight-bold"> About CryptoCurrency</p>
-                    </div>
-                    <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-12">
-                <div class="card border-0 h-100">
-                    <img src={{ asset('storage/images/eth.svg') }} alt="" class="card-image-top">
-                    <div class="card-body">
-                        <p class="card-text text-center font-weight-bold">Ethereum Network</p>
-                    </div>
-                    <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-12">
-                <div class="card border-0 h-100">
-                    <img src={{ asset('storage/images/btc.svg') }} alt="" class="card-image-top">
-                    <div class="card-body">
-                        <p class="card-text text-center font-weight-bold"> About CryptoCurrency</p>
-                    </div>
-                    <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-12">
-                <div class="card border-0 h-100">
-                    <img src={{ asset('storage/images/eth.svg') }} alt="" class="card-image-top">
-                    <div class="card-body">
-                        <p class="card-text text-center font-weight-bold">Ethereum Network</p>
-                    </div>
-                    <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-12">
-                <div class="card border-0 h-100">
-                    <img src={{ asset('storage/images/btc.svg') }} alt="" class="card-image-top">
-                    <div class="card-body">
-                        <p class="card-text text-center font-weight-bold"> About CryptoCurrency</p>
-                    </div>
-                    <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-12">
-                <div class="card border-0 h-100">
-                    <img src={{ asset('storage/images/eth.svg') }} alt="" class="card-image-top">
-                    <div class="card-body">
-                        <p class="card-text text-center font-weight-bold">Ethereum Network</p>
-                    </div>
-                    <div class="card-footer border-top-0">
-                        <span>Tags: </span><a href="#" class="badge badge-secondary">Cryptocurrency</a>
-                        <a href="#" class="badge badge-secondary">Ethereum</a>
-                        <a href="#" class="badge badge-secondary">Bitcoin</a>
-                    </div>
-                </div>
-            </div>
+            @else
+                <p class="h4 font-weight-bold">No Posts</p>
+            @endif
         </div>
 
         <div class="my-5">
