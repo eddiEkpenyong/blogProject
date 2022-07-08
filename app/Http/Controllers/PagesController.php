@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
+
         $post = Posts::all();
         return view('index.dashboard', [ 'post' => $post]);
     }
@@ -17,7 +18,8 @@ class PagesController extends Controller
     }
 
     public function posts(){
-        return view('pages.post');
+        $post = Posts::all();
+        return view('pages.post', ['post' => $post] );
     }
 
     public function gigs(){

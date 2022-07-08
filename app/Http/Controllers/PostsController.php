@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Posts;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     public function index()
     {
         //
@@ -21,26 +22,27 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $formfields = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            // 'img_path' => 'required',
+            'badge' => 'required',
+        ]);
+
+        $formfields['user_id'] = auth()->user()->id;
+        $formfields = Posts::create($formfields);
+        return redirect('/');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(Posts $posts)
+
     {
-        //
+        // $posts = Posts::find($id);
+        // dd($posts);
+        return view('posts.show', ['posts' => $posts]);
     }
 
     /**

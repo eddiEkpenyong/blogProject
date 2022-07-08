@@ -3,22 +3,22 @@
 @include('includes.nav')
 
 <div class="container mt-3">
-    <form action="" method="">
+    <form action="{{route('post.store')}}" method="post">
         @csrf
         <div class="form-group">
            <h4 class="font-weight-bold text-primary">Create Post</h4>
         </div>
         <div class="form-group">
           <label for="title" class="mb-0">Title</label>
-          <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+          <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{old('title')}}">
         </div>
         <div class="form-group">
           <label for="body" class="mb-0">Body</label>
-         <textarea name="body" id="" cols="30" rows="10" class="form-control" placeholder="Enter text"></textarea>
+         <textarea name="body" id="" cols="30" rows="10" class="form-control" placeholder="Enter text">{{old('body')}}</textarea>
         </div>
         <div class="form-group">
             <label for="tags" class="mb-0">Tags</label>
-            <input type="text" class="form-control" id="title" name="badge" placeholder="crypto, defi">
+            <input type="text" class="form-control" id="title" name="badge" placeholder="crypto, defi" value="{{old('badge')}}">
           </div>
           <div class="form-group">
             <input type="file" name="img_path" id="" >

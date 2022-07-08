@@ -37,6 +37,9 @@ Route::post('register', [AuthController::class,'register'])->name('register');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 //posts
-Route::resource('/posts', PostsController::class);
+Route::get('/posts/create', [PostsController::class, 'create']);
+Route::post('/posts/store', [PostsController::class, 'store'])->name('post.store');
+Route::get('/posts/{posts}', [PostsController::class, 'show'])->name('post.show');
+
 
 

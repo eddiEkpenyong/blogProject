@@ -38,16 +38,20 @@
                             class="bg-transparent text-white border-0 font-weight-semibold">
                     </form>
                 </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link text-white text-capitalize">Welcome: {{auth()->user()->name}}</a>
+                </li>
                 @endauth
             </ul>
 
 
-            <form class="" method="" action="#">
+            <form method="{{}}" action="GET">
                 <div class="input-group">
-                    <div class="input-group-prepend">
+                    {{-- <div class="input-group-prepend">
                         <button type="submit" class="input-group-text" style="outline: none"><i class="fa fa-search"
                                 aria-hidden="true"></i></button>
-                    </div>
+                    </div> --}}
                     <input type="search" class="form-control" name="search" placeholder="Search">
                 </div>
             </form>
